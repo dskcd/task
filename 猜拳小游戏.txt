@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+void main ()
+{
+	int playerInput;
+	int npcInput;
+
+	srand(time(NULL));
+
+	while (1)
+	{
+		printf("请出拳：");
+		scanf( "%d",& playerInput);
+		switch (playerInput)
+		{
+		case 1:
+			printf("你出的是石头 \n");
+			break;
+		case 2:
+			printf("你出的是剪刀 \n");
+			break;
+		case 3:
+			printf("你出的是布 \n");
+			break;
+		}
+		npcInput = rand() % 3 + 1;
+		switch (npcInput)
+		{
+		case 1:
+			printf("电脑出的是石头\n");
+			break;
+		case 2:
+			printf("电脑出的是剪刀\n");
+			break;
+		case 3:
+			printf("电脑出的是布\n");
+			break;
+		}
+		if (playerInput == npcInput)
+		{
+			printf("平局\n");
+		}
+		else if (playerInput + 1 == npcInput || playerInput - 2 == npcInput)
+		{
+			printf("我赢了\n");
+		}
+		else
+		{
+			printf("电脑赢了\n");
+		}
+
+	}
+	end:
+	system("pause");
+
+}
